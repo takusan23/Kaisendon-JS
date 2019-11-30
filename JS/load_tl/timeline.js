@@ -291,7 +291,7 @@ function timelineCard(json, setting) {
     //ファボアイコンとか
     var favIcon = document.createElement('i')
     favIcon.onclick = function () {
-        favToot(id)
+        favToot(setting, id)
     }
     favIcon.className = 'material-icons white-text'
     favIcon.innerHTML = 'star_border'
@@ -301,7 +301,7 @@ function timelineCard(json, setting) {
 
     var btIcon = document.createElement('i')
     btIcon.onclick = function () {
-        btToot(id)
+        btToot(setting, id)
     }
     btIcon.className = 'material-icons white-text'
     btIcon.innerHTML = 'repeat'
