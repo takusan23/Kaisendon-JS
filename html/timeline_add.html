@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>タイムライン追加</title>
+
+    <link type="text/css" rel="stylesheet" href="../css/timeline_add.css" media="screen,projection" />
+
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="../css/materialize.css" media="screen,projection" />
+
+</head>
+
+<body>
+    <div class="need">
+
+        <p class="title">必須項目</p>
+
+        <div class="input-field col s6 space">
+            <input placeholder="名前" id="name" type="text" class="validate white-text">
+            <label for="name" class="white-text">名前</label>
+        </div>
+
+        <div class="space">
+            <label class="white-text">読み込むタイムライン</label>
+            <select id="load" class="browser-default">
+                <option value="home">ホーム</option>
+                <option value="notification">通知</option>
+                <option value="local">ローカル</option>
+                <option value="public">連合</option>
+            </select>
+        </div>
+
+
+        <div class="space">
+            <label class="white-text">アカウント</label>
+            <select id="account_select" class="browser-default">
+
+            </select>
+        </div>
+
+        <a class="waves-effect waves-light btn blue okbutton" id="add"><i
+                class="material-icons left">add</i>タイムライン追加</a>
+    </div>
+
+    <!-- オプション項目 -->
+    <div class="content">
+
+        <div class="bar">
+            <i class="material-icons cleardrag rightbutton red-text" id="close_button" title="閉じる">close</i>
+            <i class="material-icons cleardrag rightbutton blue-text" id="dev_button" title="F12">developer_mode</i>
+        </div>
+
+        <div class="optionspace">
+            <label>
+                　
+                <input type="checkbox" id="streaming" />
+                <span>ストリーミングAPIを無効にする</span>
+            </label>
+        </div>
+        <div class="optionspace">
+            <label>
+                　
+                <input type="checkbox" id="img" />
+                <span>アイコンなどの画像を非表示にする</span>
+            </label>
+        </div>
+        <div class="optionspace">
+            <label>
+                　
+                <input type="checkbox" id="gif" />
+                <span>GIFアニメを無効にする</span>
+            </label>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="../JS/materialize.js"></script>
+
+    <!-- 閉じるなど。共通に -->
+    <script type="text/javascript" src="../JS/window_close/electron.js"></script>
+    <!-- <script type="text/javascript" src="../JS/window_close/window_close.js.js"></script> -->
+
+    <!-- 保存とか -->
+    <script type="text/javascript" src="../JS/timeline_add/electron.js"></script>
+    <!-- <script type="text/javascript" src="../JS/timeline_add/timeline_add.js"></script> -->
+
+
+</body>
+
+<!-- Electron / JS　共通 -->
+<script>
+
+    window.onload = function () {
+        //アカウント読み込み
+        loadAccount()
+    }
+
+    function loadAccount() {
+        if (localStorage.getItem('accounts') != null) {
+            var accounts = JSON.parse(localStorage.getItem('accounts'))
+            for (let index = 0; index < accounts.length; index++) {
+                const account = accounts[index];
+                //追加
+                var element = document.createElement('option')
+                element.value = index
+                element.innerHTML = account.instance + ' / ' + account.name
+                document.getElementById('account_select').append(element)
+            }
+        }
+    }
+
+</script>
+
+</html>

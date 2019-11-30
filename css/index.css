@@ -1,0 +1,199 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.menubutton {
+    color: #ffffff;
+    width: 100%;
+    vertical-align: middle;
+    padding: 5%;
+    font-size: 20px;
+}
+
+.menu {
+    position: relative;
+    float: left;
+    height: 100%;
+    width: 25%;
+    background: #0277bd;
+    opacity: 0.8;
+}
+
+#timeline_button_list::-webkit-scrollbar {
+    display: none;
+}
+
+.bottommenu {
+    position: absolute;
+    bottom: 0;
+}
+
+.cleardrag {
+    -webkit-app-region: no-drag;
+    /* ドラッグ解除 */
+}
+
+.rightbutton {
+    float: right;
+    cursor: pointer;
+    cursor: hand;
+    margin: 2px;
+}
+
+.bar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 5%;
+    -webkit-app-region: drag;
+    background: #ffffff;
+    /* ドラッグ可能に */
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.timeline {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #ffffff;
+    float: left;
+    width: 75%;
+    height: 95%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.space {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.toot {
+    margin: 10px;
+}
+
+.header {
+    position: relative;
+    margin: 10px;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.editpanel {
+    position: relative;
+    float: right;
+    background: tomato;
+    width: 50%;
+    display: none;
+    height: 100%;
+}
+
+.title {
+    font-size: 20px;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+}
+
+.okbutton {
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+}
+
+.optionspace {
+    margin: 10%;
+    color: white;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.title {
+    font-size: 20px;
+}
+
+.settingpadding {
+    padding-top: 10px;
+}
+
+.settingdiv {
+    margin: auto;
+    padding-left: 30%;
+    width: 90%;
+}
+
+.settingtitle {
+    margin-bottom: 50px;
+}
+
+.settingchecktextcolor {
+    color: black;
+}
+
+.icon-text {
+    vertical-align: -6px;
+}
+
+/* マルチカラム */
+
+.multicolumn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    float: left;
+    width: 75%;
+    height: 95%;
+    white-space: nowrap;
+    overflow-x: scroll;
+}
+
+.multicolumn_card {
+    display: inline-block;
+    margin-right: 1%;
+    width: 40%;
+    height: 95%;
+    vertical-align: top;
+    white-space: normal;
+}
+
+.multicolumn_timeline {
+    background: #ffffff;
+    float: left;
+    height: 100%;
+    width: 75%;
+    height: 95%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+/* .timelinecard {
+    animation: add 3s linear 0s infinite none;
+}
+
+@keyframes add {
+    0% {
+        op: 0px;
+    }
+    100% {
+        height: 100px;
+    }
+} */
